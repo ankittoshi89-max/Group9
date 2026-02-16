@@ -1,0 +1,401 @@
+{
+  "info": {
+    "_postman_id": "acbeacfb-c188-44b1-8a3e-f7eda04396fd",
+    "name": "Hospital Management API Group 9",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43312150",
+    "_collection_link": "https://go.postman.co/collection/43312150-acbeacfb-c188-44b1-8a3e-f7eda04396fd?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "http://localhost:5000/api/auth/register",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Admin User\",\r\n  \"email\": \"admin@hospital.com\",\r\n  \"password\": \"admin123\",\r\n  \"role\": \"admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5000/api/auth/login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"ahmed@hospital.com\",\r\n  \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5000/api/auth/register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Dr. Sarah Johnson\",\r\n  \"email\": \"sarah@hospital.com\",\r\n  \"password\": \"password123\",\r\n  \"role\": \"doctor\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5000/api/auth/login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"ahmed@hospital.com\",\r\n  \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5000/api/auth/register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"ahmed@hospital.com\",\r\n  \"password\": \"password123\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patients",
+      "item": [
+        {
+          "name": "http://localhost:5000/api/patients",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTMwYWMxM2NhMjU1MjhiOWQxY2E3NCIsImlhdCI6MTc3MTI0NDIyNSwiZXhwIjoxNzcxMzMwNjI1fQ.2VI2Si-J1TUkEmcXMoNSoivMyo8n42NEgPhDDW327hQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/patients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "patients"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5000/api/patients",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTMwM2UzZTRmMmIzYjcxZTZiN2IwMSIsImlhdCI6MTc3MTI0MjQ2NywiZXhwIjoxNzcxMzI4ODY3fQ.bKU5FUa8WTDZLnO9jJqtAR7pPFwfS-xjT5GfKtOxxZI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Sara Mohammed\",\r\n  \"age\": 28,\r\n  \"gender\": \"female\",\r\n  \"contactNumber\": \"0501234567\",\r\n  \"address\": {\r\n    \"street\": \"Al Wasl Road\",\r\n    \"city\": \"Dubai\",\r\n    \"state\": \"Dubai\",\r\n    \"zipCode\": \"12345\"\r\n  },\r\n  \"bloodGroup\": \"O+\",\r\n  \"knownDiseases\": [\"Diabetes\"],\r\n  \"allergies\": [\"Penicillin\"],\r\n  \"currentComplaints\": \"Fever and headache for 2 days\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/patients",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "patients"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admission",
+      "item": [
+        {
+          "name": "http://localhost:5000/api/admissions",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTMwM2UzZTRmMmIzYjcxZTZiN2IwMSIsImlhdCI6MTc3MTI0MjQ2NywiZXhwIjoxNzcxMzI4ODY3fQ.bKU5FUa8WTDZLnO9jJqtAR7pPFwfS-xjT5GfKtOxxZI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patient\": \"698ae5f4e26f847e96429740\",\r\n  \"department\": \"Medicine\",\r\n  \"ward\": \"Medical A\",\r\n  \"bedNumber\": \"A-101\",\r\n  \"reasonForAdmission\": \"High fever and suspected infection\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admissions",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admissions"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Doctors",
+      "item": [
+        {
+          "name": "http://localhost:5000/api/doctors",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/doctors",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "doctors"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "http://localhost:5000/api/doctors",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTMwYWMxM2NhMjU1MjhiOWQxY2E3NCIsImlhdCI6MTc3MTI0NDIyNSwiZXhwIjoxNzcxMzMwNjI1fQ.2VI2Si-J1TUkEmcXMoNSoivMyo8n42NEgPhDDW327hQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user\": \"699303e3e4f2b3b71e6b7b01\",\r\n  \"specialization\": \"General Medicine\",\r\n  \"department\": \"Medicine\",\r\n  \"qualification\": \"MBBS, MD\",\r\n  \"experience\": 10,\r\n  \"contactNumber\": \"0501234567\",\r\n  \"availability\": {\r\n    \"days\": [\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\"],\r\n    \"startTime\": \"09:00\",\r\n    \"endTime\": \"17:00\"\r\n  },\r\n  \"consultationFee\": 200\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/doctors",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "doctors"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "item": [
+        {
+          "name": " http://localhost:5000/api/appointments",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OTMwM2UzZTRmMmIzYjcxZTZiN2IwMSIsImlhdCI6MTc3MTI0MjQ2NywiZXhwIjoxNzcxMzI4ODY3fQ.bKU5FUa8WTDZLnO9jJqtAR7pPFwfS-xjT5GfKtOxxZI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"patient\": \"698ae5f4e26f847e96429740\",\r\n  \"doctor\": \"69930b5b3ca25528b9d1ca78\",\r\n  \"appointmentDate\": \"2026-02-20\",\r\n  \"appointmentTime\": \"10:00\",\r\n  \"reason\": \"Regular checkup\",\r\n  \"type\": \"consultation\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/appointments",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "appointments"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
