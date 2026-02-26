@@ -22,6 +22,13 @@ exports.register = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
     
+    // ADD THIS VALIDATION
+    if (!name || !email || !password || !role) {
+      return res.status(400).json({ 
+        error: 'Please provide all required fields: name, email, password, role' 
+      });
+    }
+    
     const userExists = await User.findOne({ email });
     if (userExists) {
       return res.status(400).json({ error: 'User already exists' });
