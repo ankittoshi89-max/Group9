@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hospital-api
+  namespace: hospital-api
+  labels:
+    app: hospital-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hospital-api
+  template:
+    metadata:
+      labels:
+        app: hospital-api
+    spec:
+      containers:
+        - name: hospital-api
+          image: hospital-api:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: "5000"
+            - name: NODE_ENV
+              value: "production"
+            - name: JWT_EXPIRE
+              value: "24h"
+            - name: MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: hospital-api-secrets
+                  key: MONGODB_URI
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: hospital-api-secrets
+                  key: JWT_SECRET
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 5000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "250m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
