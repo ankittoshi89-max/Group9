@@ -27,17 +27,17 @@ pipeline {
         }
 
         stage('Run Tests') {
-    environment {
-        MONGODB_URI = 'mongodb+srv://your-actual-atlas-uri'
-        JWT_SECRET  = 'test-secret-key-for-jenkins-pipeline'
-        JWT_EXPIRE  = '24h'
-        PORT        = '5000'
-    }
-    steps {
-        echo 'Running Jest tests...'
-        sh 'npm test || true'
-    }
-}
+            environment {
+                MONGODB_URI = 'mongodb+srv://your-actual-atlas-uri'
+                JWT_SECRET  = 'test-secret-key-for-jenkins-pipeline'
+                JWT_EXPIRE  = '24h'
+                PORT        = '5000'
+            }
+            steps {
+                echo 'Running Jest tests...'
+                sh 'npm test || true'
+            }
+        }
 
         stage('Security Audit') {
             steps {
@@ -48,8 +48,9 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                echo 'Building Docker image...'
-                sh "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                echo 'Docker image already built and pushed via GitHub Actions CI/CD pipeline.'
+                echo 'Image available at: https://hub.docker.com/r/zenindoffy/hospital-api'
+                echo 'Skipping duplicate build in Jenkins to avoid socket conflicts on Windows.'
             }
         }
 
