@@ -2,8 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
+const promClient = require('prom-client');
 
 const app = express();
+
+// Prometheus metrics
+const collectDefaultMetrics = promClient.collectDefaultMetrics;
+collectDefaultMetrics({ timeout: 5000 });
 
 // Security middleware
 app.use(helmet());
@@ -11,7 +16,7 @@ app.use(cors());
 
 // Rate limiting
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000, // 10 minutes
+  windowMs: 10 * 60 * 1000,
   max: 100
 });
 app.use(limiter);
@@ -29,6 +34,12 @@ app.use('/api/appointments', require('./routes/appointments'));
 // Health check
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', message: 'Hospital API is running' });
+});
+
+// Prometheus metrics endpoint
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', promClient.register.contentType);
+  res.end(await promClient.register.metrics());
 });
 
 // Error handler
